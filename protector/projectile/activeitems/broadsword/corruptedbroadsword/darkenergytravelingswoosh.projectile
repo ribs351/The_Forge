@@ -1,0 +1,208 @@
+{
+	"projectileName": "darkenergytravelingswoosh",
+	"image": "darkenergytravelingswoosh.png",
+	"animationCycle": 0.3,
+	"timeToLive": 0.3,
+	"frameNumber": 5,
+	"speed": 150,
+	"orientationLocked": true,
+	"damagePoly": [[-40, 24.5], [3.5, 24.5], [15.5, 21.5], [28.5, 15.5], [36.5, 7.5], [40.5, -1.5], [40.5, -12.5], [32.5, -24.5], [-12, -24.5]],
+	"animationLoops": true,
+	"piercing": true,
+	"bounces": -1,
+	"flippable": true,
+	"damageKind": "broadsword",
+	"emitters": [],
+	"lightColor": [255, 0, 0],
+	"fullbright": true,
+	"statusEffects": [],
+	"knockback": 10,
+	"knockbackDirectional": true,
+	"periodicActions": [{
+			"action": "projectile",
+			"time": 0.03,
+			"repeat": true,
+			"type": "darkboltguide",
+			"inheritDamageFactor": 1,
+			"offsetRange": [3, 3, -3, -3],
+			"config": {
+				"speed": 0,
+				"timeToLive": 1.5,
+				"actionOnReap": [{
+						"action": "sound",
+						"options": ["/sfx/melee/charge_up11.ogg"]
+					}, {
+						"action": "projectile",
+						"type": "roar",
+						"inheritDamageFactor": 0.5,
+						"config": {
+							"processing": "?replace;52C6D6=D12323;94DEE7=FF5E5E;E7EFF7=FFBABA",
+							"speed": 0,
+							"timeToLive": 1,
+							"statusEffects": ["electrified"],
+							"damageKind": "electricplasma",
+							"piercing": true,
+							"bounces": -1
+						}
+					}, {
+						"action": "projectile",
+						"type": "darkball",
+						"inheritDamageFactor": 0.5,
+						"config": {
+							"speed": 0,
+							"timeToLive": 1,
+							"statusEffects": ["burning"],
+							"damageKind": "fireplasma",
+							"piercing": true,
+							"bounces": -1,
+							"periodicActions": [{
+									"time": 0.2,
+									"repeat": true,
+									"action": "projectile",
+									"type": "predarkbeam",
+									"angleAdjust": 0,
+									"fuzzAngle": 60,
+									"inheritDamageFactor": 0.1,
+									"config": {
+										"timeToLive": 0.1,
+										"animationCycle": 0.1,
+										"bounces": -1,
+										"actionOnReap": [{
+												"action": "projectile",
+												"type": "darkbeam",
+												"inheritDamageFactor": 1,
+												"config": {
+													"timeToLive": 0.2,
+													"animationCycle": 0.2,
+													"bounces": -1
+												}
+											}, {
+												"action": "sound",
+												"options": ["/sfx/gun/plasma_sniper1.ogg", "/sfx/gun/plasma_sniper2.ogg"]
+											}
+										]
+									}
+								}, {
+									"time": 0.2,
+									"repeat": true,
+									"action": "projectile",
+									"type": "predarkbeam",
+									"angleAdjust": 72,
+									"fuzzAngle": 60,
+									"inheritDamageFactor": 0.1,
+									"config": {
+								
+										"timeToLive": 0.1,
+										"animationCycle": 0.1,
+										"bounces": -1,
+										"actionOnReap": [{
+												"action": "projectile",
+												"type": "darkbeam",
+												"inheritDamageFactor": 1,
+												"config": {
+													
+													"timeToLive": 0.2,
+													"animationCycle": 0.2,
+													"bounces": -1
+												}
+											}
+										]
+									}
+								}, {
+									"time": 0.2,
+									"repeat": true,
+									"action": "projectile",
+									"type": "predarkbeam",
+									"angleAdjust": 144,
+									"fuzzAngle": 60,
+									"inheritDamageFactor": 0.1,
+									"config": {
+										
+										"timeToLive": 0.1,
+										"animationCycle": 0.1,
+										"bounces": -1,
+										"actionOnReap": [{
+												"action": "projectile",
+												"type": "darkbeam",
+												"inheritDamageFactor": 1,
+												"config": {
+													
+													"timeToLive": 0.2,
+													"animationCycle": 0.2,
+													"bounces": -1
+												}
+											}
+										]
+									}
+								}, {
+									"time": 0.2,
+									"repeat": true,
+									"action": "projectile",
+									"type": "predarkbeam",
+									"angleAdjust": 216,
+									"fuzzAngle": 60,
+									"inheritDamageFactor": 0.1,
+									"config": {
+										
+										"timeToLive": 0.1,
+										"animationCycle": 0.1,
+										"bounces": -1,
+										"actionOnReap": [{
+												"action": "projectile",
+												"type": "darkbeam",
+												"inheritDamageFactor": 1,
+												"config": {
+													
+													"timeToLive": 0.2,
+													"animationCycle": 0.2,
+													"bounces": -1
+												}
+											}
+										]
+									}
+								}, {
+									"time": 0.2,
+									"repeat": true,
+									"action": "projectile",
+									"type": "predarkbeam",
+									"angleAdjust": 288,
+									"fuzzAngle": 60,
+									"inheritDamageFactor": 0.1,
+									"config": {
+										
+										"timeToLive": 0.1,
+										"animationCycle": 0.1,
+										"bounces": -1,
+										"actionOnReap": [{
+												"action": "projectile",
+												"type": "darkbeam",
+												"inheritDamageFactor": 1,
+												"config": {
+													
+													"timeToLive": 0.2,
+													"animationCycle": 0.2,
+													"bounces": -1
+												}
+											}
+										]
+									}
+								}
+							],
+							"actionOnReap": [{
+									"action": "projectile",
+									"type": "darkballout",
+									"inheritDamageFactor": 1,
+									"inheritSpeedFactor": 0,
+									"config": {
+										
+										"bounces": -1
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

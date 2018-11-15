@@ -1,0 +1,15 @@
+{
+  "projectileName" : "darkbeam",
+  "image" : "darkbeam.png?replace;F265F2=D12323;FF97FF=FF5E5E;F1B5F1=FFBABA",
+  "animationCycle" : 0.3,
+  "frameNumber" : 4,
+  "speed" : 0,
+  "orientationLocked" : false,
+  "damagePoly" : [ [0, 1], [120, 1], [120, -1], [0, -1] ],
+  "animationLoops" : false,
+  "piercing" : true,
+  "flippable" : true,
+  "emitters" : [ "electricplasma", "defaultblue", "electricplasma", "defaultblue", "electricplasma", "defaultblue"  ],
+  "damageKind" : "electric",
+  "lightColor": [255, 0, 0]
+}

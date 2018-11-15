@@ -1,0 +1,22 @@
+{
+	"input": [{
+			"item": "protectoratebroadsword",
+			"count": 1
+		}, {
+			"item": "refinedferozium",
+			"count": 30
+		}, {
+			"item": "solariumstar",
+			"count": 50
+		}, {
+			"item": "battery",
+			"count": 100
+		}
+	],
+	"output": {
+		"item": "faithkeeperbroadsword",
+		"count": 1
+	},
+	"duration": 0,
+	"groups": ["craftingmanipulator", "weapons", "all"]
+}

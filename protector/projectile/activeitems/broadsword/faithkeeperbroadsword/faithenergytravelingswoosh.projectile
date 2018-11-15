@@ -1,0 +1,132 @@
+{
+	"projectileName": "faithenergytravelingswoosh",
+	"image": "faithenergytravelingswoosh.png",
+	"animationCycle": 0.3,
+	"timeToLive": 0.3,
+	"frameNumber": 5,
+	"speed": 150,
+	"orientationLocked": true,
+	"damagePoly": [[-40, 24.5], [3.5, 24.5], [15.5, 21.5], [28.5, 15.5], [36.5, 7.5], [40.5, -1.5], [40.5, -12.5], [32.5, -24.5], [-12, -24.5]],
+	"animationLoops": true,
+	"piercing": true,
+	"bounces": -1,
+	"flippable": true,
+	"damageKind": "broadsword",
+	"emitters": [],
+	"lightColor": [0, 90, 140],
+	"fullbright": true,
+	"statusEffects": [{
+			"effect": "paralysis",
+			"duration": 5
+		}, {
+			"effect": "frostsnare",
+			"duration": 5
+		}
+	],
+	"knockback": 0,
+	"knockbackDirectional": true,
+	"periodicActions": [{
+			"action": "projectile",
+			"time": 0.015,
+			"repeat": true,
+			"type": "faithboltguide",
+			"inheritDamageFactor": 1,
+			"offsetRange": [3, 3, -3, -3],
+			"config": {
+				"speed": 0,
+				"timeToLive": 1.5,
+				"processing": "?replace;C4C4F5=60B8EA;8383DF=008CD9",
+				"actionOnReap": [{
+						"action": "sound",
+						"options": ["/sfx/gun/plasma_pistol3.ogg"]
+					}, {
+						"action": "projectile",
+						"type": "faithexplosion",
+						"fuzzAngle": 180,
+						"inheritDamageFactor": 1,
+						"config": {
+							"knockback": 30
+						}
+					}, {
+						"action": "projectile",
+						"type": "healcloud",
+						"inheritDamageFactor": 0.25,
+						"config": {
+							"processing": "?replace;64fd4df2=a6edfff2;4dfd547a=a6edff7a;4dfd7338=a6edff38;fffffe=2e1a66",
+							"bounces": -1,
+							"timeToLive": 0.4,
+							"animationCycle": 0.4,
+							"damageTeam": {
+								"type": "friendly"
+							}
+						}
+					}, {
+						"action": "sound",
+						"options": ["/sfx/projectiles/elementcloud_break1.ogg", "/sfx/projectiles/elementcloud_break2.ogg"]
+					}, {
+						"action": "projectile",
+						"type": "invisibletentaclefistnosound",
+						"inheritDamageFactor": 0.05,
+						"angleAdjust": -30,
+						"fuzzAngle": 30,
+						"config": {
+							"speed": 50,
+							"timeToLive": 10,
+							"knockback": 2,
+							"damageKind": "plasma",
+							"controlForce": 120,
+							"pickupDistance": 2,
+							"snapDistance": 4,
+							"returning": true,
+							"movementSettings": {
+								"collisionEnabled": false
+							},
+							"periodicActions": [{
+									"time": 0.01,
+									"repeat": true,
+									"action": "particle",
+									"rotate": true,
+									"specification": {
+										"type": "animated",
+										"animation": "/animations/miniwobbleshottrail/miniwobbleshottrail.animation?hueshift=70",
+										"initialVelocity": [0, 0],
+										"timeToLive": 0.15,
+										"layer": "front",
+										"position": [0, 0],
+										"approach": [0, 50],
+										"fade": 0.1,
+										"destructionAction": "shrink",
+										"destructionTime": 0.1,
+										"size": 1,
+										"fullbright": true
+									}
+								}
+							],
+							"actionOnReap": [{
+									"action": "projectile",
+									"type": "healcloud",
+									"inheritDamageFactor": 0,
+									"config": {
+										"processing": "?0",
+										"damageKind": "noDamage",
+										"statusEffects": [{
+												"effect": "staffregeneration",
+												"duration": 5
+											}, {
+												"effect": "healingwater",
+												"duration": 10
+											}, {
+												"effect": "protectorshield",
+												"duration": 1
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}
