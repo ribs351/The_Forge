@@ -1,0 +1,296 @@
+{
+	"itemName": "medic_ar",
+	"price": 960,
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "It's the only weapon where it's ok to lob grenades at your friends!",
+	"shortdescription": "Healer's Assault Rifle",
+	"tooltipKind": "base",
+	"category": "assaultRifle",
+	"twoHanded": true,
+	"itemTags": ["weapon", "ranged", "assaultrifle"],
+	"level": 4,
+
+	"inventoryIcon": "medic_ar.png",
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "medic_ar.png?scalenearest=0.9",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"parts": {
+				"muzzleFlash": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [0.9, -0.3],
+						"fullbright": true,
+						"transformationGroups": ["muzzle"]
+					},
+
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": "<partImage>:<variant>.<frame>"
+								}
+							}
+						}
+					}
+				},
+				"barrel": {
+					"properties": {
+						"centered": true,
+						"image": "<partImage><paletteSwaps>",
+						"offset": [-0.75, -0.375],
+						"firePosition": [0.75, -0.125],
+						"transformationGroups": ["weapon"]
+					}
+				},
+				"grenadelauncher": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [-0.75, -0.375],
+						"transformationGroups": ["muzzle"],
+						"firePosition": [0.75, -0.125],
+						"image": "/items/active/weapons/ranged/abilities/grenadelauncher/grenadelauncher.png?0"
+					}
+				}
+			}
+		},
+		"particleEmitters": {
+			"muzzleFlash": {
+				"offsetRegion": [5, 0, 5, 0],
+				"particles": [{
+						"particle": "discardedbullet"
+					}
+				]
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/gun/ar4.ogg"]
+		}
+	},
+
+	"baseOffset": [0.4, 0.2],
+	"muzzleOffset": [2.1, 0.5],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 0.15,
+		"baseDps": 10.5,
+		"energyUsage": 31.5,
+		"inaccuracy": 0.02,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "standardbullet",
+		"projectileParameters": {
+			"knockback": 15
+		},
+		"stances": {
+			"idle": {
+				"armRotation": 0,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": true,
+				"allowFlip": true,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			},
+			"fire": {
+				"duration": 0,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			},
+			"cooldown": {
+				"duration": 0.15,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			}
+		}
+	},
+
+	"altAbilityType": "grenadelauncher",
+	"altAbility": {
+		"name": "Grenade Launcher",
+		"type": "grenadelauncher",
+		"scripts": ["/items/active/weapons/ranged/abilities/altfire.lua"],
+		"class": "AltFireAttack",
+
+		"elementalConfig": {
+			"physical": {
+				"projectileType": "medic_penetrator"
+			}
+		},
+		"projectileParameters": {
+			"speed": 70,
+			"power": 40,
+			"periodicActions": [{
+					"action": "sound",
+					"options": ["/sfx/melee/rocketspear_loop_poison.ogg"],
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "healingnadeprojectile",
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 2.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 3,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 3.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 4,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 4.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 5.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 6,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 6.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 7,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 7.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 8,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 8.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 9,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 9.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 10,
+					"repeat": false
+				}
+			]
+
+		},
+		"projectileCount": 1,
+		"inaccuracy": 0,
+		"baseDamage": 30,
+		"energyUsage": 250,
+		"fireTime": 2.0,
+		"knockback": 10,
+		"fireType": "auto",
+
+		"firePositionPart": "grenadelauncher",
+		"hidePrimaryMuzzleFlash": true,
+
+		"stances": {
+			"fire": {
+				"duration": 0,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.2",
+				"backArmFrame": "swim.3"
+			},
+			"cooldown": {
+				"duration": 0.11,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}

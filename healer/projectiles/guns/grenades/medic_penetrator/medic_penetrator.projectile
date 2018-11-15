@@ -1,0 +1,25 @@
+{
+	"projectileName": "medic_penetrator",
+	"physics": "arrow",
+	"bounces": -1,
+	"timeToLive": 11,
+	"piercing": true,
+	"image": "medic_penetrator.png",
+	"animationCycle": 13,
+	"lightColor": [0, 90, 140],
+	"frameNumber": 6,
+	"actionOnReap": [],
+	"periodicActions": [],
+	"movementSettings": {
+		"liquidFriction": 5,
+		"airFriction": 0.3,
+		"gravityMultiplier": 1.0,
+		"bounceFactor": 0.3,
+		"groundFriction": 10,
+		"collisionPoly": [[0.6, 0.3], [-0.6, 0.3], [-0.6, -0.3], [0.6, -0.3]]
+	},
+	"power": 10,
+	"damageKind": "bow",
+	"damagePoly": [[8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2]],
+	"emitters": []
+}

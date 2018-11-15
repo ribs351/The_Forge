@@ -1,0 +1,226 @@
+{
+	"itemName": "medic_revolver",
+	"price": 640,
+	"maxStack": 1,
+	"rarity": "Rare",
+	"description": "Your pistol, beefed up!",
+	"shortdescription": "Healer's Revolver",
+	"tooltipKind": "base",
+	"category": "Modified Revolver",
+	"twoHanded": true,
+	"itemTags": ["weapon", "ranged", "pistol"],
+	"level": 4,
+
+	"inventoryIcon": "medic_revolver.png",
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "medic_revolver.png?scalenearest=0.8",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"stateTypes": {
+				"firing": {
+					"default": "off",
+					"states": {
+						"off": {},
+						"fire": {
+							"frames": 2,
+							"cycle": 0.07,
+							"mode": "transition",
+							"transition": "off"
+						}
+					}
+				}
+			},
+
+			"parts": {
+				"muzzleFlash": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [0.9, -1],
+						"fullbright": true,
+						"transformationGroups": ["muzzle"]
+					},
+
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": "<partImage>:<variant>.<frame>"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/gun/rifle1.ogg"],
+			"altFire": ["/sfx/gun/gristlegun1.ogg", "/sfx/gun/gristlegun2.ogg", "/sfx/gun/gristlegun3.ogg", "/sfx/gun/gristlegun4.ogg"]
+		}
+	},
+
+	"baseOffset": [0.5, 0.15],
+	"muzzleOffset": [1.5, 1.1],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 1,
+		"baseDps": 10,
+		"energyUsage": 25,
+		"inaccuracy": 0.025,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "standardbullet",
+		"projectileParameters": {
+			"knockback": 6
+		},
+		"stances": {
+			"idle": {
+				"armRotation": -10,
+				"weaponRotation": 10,
+				"twoHanded": true,
+				"weaponOffset": [0.55, 0.4],
+
+				"allowRotate": true,
+				"allowFlip": true,
+				"frontArmFrame": "swim.3",
+				"backArmFrame": "jump.3"
+			},
+			"fire": {
+				"duration": 0,
+				"armRotation": 0,
+				"weaponRotation": 30,
+				"twoHanded": true,
+				"weaponOffset": [0.55, 0.4],
+
+				"allowRotate": false,
+				"allowFlip": false,
+				"frontArmFrame": "swim.3",
+				"backArmFrame": "jump.3"
+			},
+			"cooldown": {
+				"duration": 1,
+				"armRotation": 0,
+				"weaponRotation": 30,
+				"twoHanded": true,
+				"weaponOffset": [0.55, 0.4],
+
+				"allowRotate": true,
+				"allowFlip": false,
+				"frontArmFrame": "swim.3",
+				"backArmFrame": "jump.3"
+			}
+		}
+	},
+
+	"altAbilityType": "stickyshot",
+	"altAbility": {
+		"fireTime": 1.5,
+		"baseDps": 0,
+		"energyUsage": 75,
+		"projectileType": "whitebeam",
+		"inaccuracy": 0.0,
+		"projectileCount": 1,
+		"projectileParameters": {
+			"damageTeam": {
+				"type": "environment"
+			},
+			"statusEffects": [{
+					"effect": "regenerationfast",
+					"duration": 3.0
+				}, {
+					"effect": "energyregen",
+					"duration": 1.0
+				}
+			],
+			"actionOnReap": [{
+					"action": "spark"
+				}, {
+					"action": "sound",
+					"options": ["/sfx/statuseffects/stimuse.ogg"]
+				}, {
+					"action": "loop",
+					"count": 15,
+					"body": [{
+							"action": "particle",
+							"specification": {
+								"type": "ember",
+								"size": 1.0,
+								"color": [96, 184, 234, 255],
+								"light": [0, 140, 217],
+								"fullbright": true,
+								"fade": 0.9,
+								"initialVelocity": [0, 0],
+								"timeToLive": 0.3,
+								"layer": "middle",
+								"variance": {
+									"initialVelocity": [10, 10],
+									"timeToLive": 0.15
+								}
+							}
+						}
+					]
+				}
+			],
+			"periodicActions": [{
+					"time": 0.015,
+					"repeat": true,
+					"action": "particle",
+					"rotate": true,
+					"specification": {
+						"type": "animated",
+						"animation": "/animations/energybeamtrail/energybeamtrail.animation?replace;60B8EA=f2f2f2;008CD9=bfbfbf",
+						"initialVelocity": [0.0, 0.0],
+						"timeToLive": 0.2,
+						"layer": "middle",
+						"position": [0.0, 0.0]
+					}
+				}
+			],
+			"processing": "?0",
+			"bounces": 0,
+			"timeToLive": 1.0,
+			"power": 0.0,
+			"knockback": 0,
+			"speed": 100
+		},
+		"stances": {
+			"fire": {
+				"duration": 0.3,
+				"armRotation": -7,
+				"weaponRotation": 13,
+				"twoHanded": true,
+				"weaponOffset": [0.55, 0.4],
+				"allowRotate": false,
+				"allowFlip": false,
+				"frontArmFrame": "swim.3",
+				"backArmFrame": "jump.3"
+			},
+			"cooldown": {
+				"duration": 0.2,
+				"armRotation": 0,
+				"weaponRotation": -360,
+				"twoHanded": false,
+				"weaponOffset": [0.2, 0],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}

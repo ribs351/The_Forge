@@ -1,0 +1,12 @@
+{
+ "input" : [
+    { "item" : "redstim", "count" : 5 },
+    { "item" : "staticcell", "count" : 5 },
+    { "item" : "bomb", "count" : 5 }
+  ],
+  "output" : {
+    "item" : "hp_grenade",
+    "count" : 5
+  },
+  "groups" : [ "craftingmedical2", "buffs" ]
+}

@@ -1,0 +1,12 @@
+{
+ "input" : [
+    { "item" : "bluestim", "count" : 4 },
+    { "item" : "redstim", "count" : 4 },
+    { "item" : "syringe", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "healer_syringe",
+    "count" : 1
+  },
+  "groups" : [ "craftingmedical2", "buffs" ]
+}

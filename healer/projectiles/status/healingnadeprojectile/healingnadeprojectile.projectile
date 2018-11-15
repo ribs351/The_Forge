@@ -1,0 +1,26 @@
+{
+	"projectileName": "healingnadeprojectile",
+	"physics": "statuspod",
+	"bounces": -1,
+	"timeToLive": 10,
+	"speed": 0,
+	"damageKindImage": "icon.png",
+	"image": "healingprojectile.png",
+	"animationCycle": 0.5,
+	"frameNumber": 4,
+	"actionOnReap": [],
+	"power": 0,
+
+	"onlyHitTerrain": true,
+	"persistentStatusEffects": ["regenerationfast"],
+	"statusEffectArea": [[-36, 0], [-24, -24], [0, -36], [24, -24], [36, 0], [24, 24], [0, 36], [-24, 24]],
+
+	"renderLayer": "Player+1",
+	"orientationLocked": true,
+	"fullbright": true,
+	"emitters": [],
+
+	"piercing": true,
+
+	"scripts": ["/projectiles/activeitems/staff/staffprojectile.lua"]
+}

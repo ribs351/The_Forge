@@ -1,0 +1,337 @@
+{
+	"itemName": "ana_rifle",
+	"price": 1500,
+	"inventoryIcon": "ana_rifle.png",
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "Originally belonging to a cyclops, this rifle somehow someway made it into your possession.",
+	"shortdescription": "Biotic Rifle",
+	"level": 5,
+	"tooltipKind": "base",
+	"category": "sniperRifle",
+	"itemTags": ["weapon", "ranged", "rifle"],
+	"twoHanded": true,
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "ana_rifle.png",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"stateTypes": {
+				"firing": {
+					"default": "off",
+					"states": {
+						"off": {},
+						"fire": {
+							"frames": 2,
+							"cycle": 0.07,
+							"mode": "transition",
+							"transition": "off"
+						}
+					}
+				}
+			},
+
+			"parts": {
+				"muzzleFlash": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [2, -1],
+						"fullbright": true,
+						"transformationGroups": ["muzzle"]
+					},
+
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": "<partImage>:<variant>.<frame>"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"particleEmitters": {
+			"muzzleFlash": {
+				"offsetRegion": [5.5, -0.5, 5.5, -0.5],
+				"particles": [{
+						"particle": "discardedbullet"
+					}
+				]
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/gun/omnicannon_shot1.ogg", "/sfx/gun/omnicannon_shot2.ogg", "/sfx/gun/omnicannon_shot3.ogg", "/sfx/gun/omnicannon_shot4.ogg"],
+			"altFire": ["/sfx/gun/gristlegun1.ogg", "/sfx/gun/gristlegun2.ogg", "/sfx/gun/gristlegun3.ogg", "/sfx/gun/gristlegun4.ogg"]
+		}
+	},
+
+	"baseOffset": [0.9, 0.0],
+	"muzzleOffset": [1.875, 1.3],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 1.0,
+		"baseDps": 8,
+		"energyUsage": 24,
+		"inaccuracy": 0.008,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "explosivebullet",
+		"projectileParameters": {
+			"damageTeam": {
+				"type": "friendly"
+			},
+			"statusEffects": [{
+					"effect": "weakpoison",
+					"duration": 20
+				}
+			],
+			"actionOnReap": [{
+					"action": "projectile",
+					"type": "healingnadeprojectile",
+					"config": {
+						"timeToLive": 1
+					}
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"config": {
+						"timeToLive": 0.5
+					}
+				}, {
+					"action": "sound",
+					"options": ["/sfx/projectiles/ice_break1.ogg", "/sfx/projectiles/ice_break2.ogg", "/sfx/projectiles/ice_break3.ogg", "/sfx/projectiles/ice_break4.ogg", "/sfx/projectiles/ice_break5.ogg", "/sfx/projectiles/ice_break6.ogg", "/sfx/projectiles/ice_break7.ogg", "/sfx/projectiles/ice_break8.ogg", "/sfx/projectiles/ice_break9.ogg", "/sfx/projectiles/ice_break10.ogg"]
+				}
+			],
+			"periodicActions": [{
+					"time": 0,
+					"repeat": false,
+					"action": "projectile",
+					"type": "invisibletentaclefistnosound",
+					"config": {
+						"controlForce": 9999999999,
+						"speed": 1000,
+						"snapDistance": 1000,
+						"pickupDistance": 0,
+						"damageTeam": {
+							"type": "passive"
+						},
+						"ignoreTerrain": true,
+						"bounces": -1,
+						"power": 0,
+						"knockback": 0,
+						"damageKind": "hidden",
+						"timeToLive": 0.7,
+						"actionOnReap": [{
+								"action": "sound",
+								"options": ["/sfx/gun/reload/machinepistol_reload_clip3.ogg"]
+							}
+						]
+					}
+				}, {
+					"time": 0.015,
+					"repeat": true,
+					"action": "particle",
+					"rotate": true,
+					"specification": {
+						"type": "animated",
+						"animation": "/animations/energybeamtrail/energybeamtrail.animation?replace;60B8EA=f2f2f2;008CD9=bfbfbf",
+						"initialVelocity": [0.0, 0.0],
+						"timeToLive": 0.2,
+						"layer": "middle",
+						"position": [0.0, 0.0]
+					}
+				}
+			],
+			"processing": "?0",
+			"bounces": 0,
+			"damageKind": "poison",
+			"damageType": "ignoresdef",
+			"timeToLive": 1.0,
+			"power": 0.0,
+			"knockback": 0,
+			"speed": 120
+		},
+		"stances": {
+			"idle": {
+				"armRotation": 0,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": true,
+				"allowFlip": true
+			},
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 10,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.25,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"frontArmFrame": "swim.2",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+	"altAbilityType": "stickyshot",
+	"altAbility": {
+		"fireTime": 1.5,
+		"baseDps": 0,
+		"energyUsage": 375,
+		"projectileType": "whitebeam",
+		"inaccuracy": 0.0,
+		"projectileCount": 1,
+		"projectileParameters": {
+			"damageTeam": {
+				"type": "environment"
+			},
+			"statusEffects": [{
+					"effect": "regenerationfast",
+					"duration": 10
+				}, {
+					"effect": "energyregen",
+					"duration": 10
+				}, {
+					"effect": "nanowrapheal"
+				}, {
+					"effect": "maxhealthscalingboostfood",
+					"duration": 10
+				}, {
+					"effect": "maxenergyscalingboostfood",
+					"duration": 10
+				}
+			],
+			"actionOnReap": [{
+					"action": "spark"
+				}, {
+					"action": "sound",
+					"options": ["/sfx/statuseffects/stimuse.ogg"]
+				}, {
+					"action": "loop",
+					"count": 15,
+					"body": [{
+							"action": "particle",
+							"specification": {
+								"type": "ember",
+								"size": 1.0,
+								"color": [96, 184, 234, 255],
+								"light": [0, 140, 217],
+								"fullbright": true,
+								"fade": 0.9,
+								"initialVelocity": [0, 0],
+								"timeToLive": 0.3,
+								"layer": "middle",
+								"variance": {
+									"initialVelocity": [10, 10],
+									"timeToLive": 0.15
+								}
+							}
+						}
+					]
+				}
+			],
+			"periodicActions": [{
+					"time": 0,
+					"repeat": false,
+					"action": "projectile",
+					"type": "invisibletentaclefistnosound",
+					"config": {
+						"controlForce": 9999999999,
+						"speed": 1000,
+						"snapDistance": 1000,
+						"pickupDistance": 0,
+						"damageTeam": {
+							"type": "passive"
+						},
+						"ignoreTerrain": true,
+						"bounces": -1,
+						"power": 0,
+						"knockback": 0,
+						"damageKind": "hidden",
+						"timeToLive": 0.7,
+						"actionOnReap": [{
+								"action": "sound",
+								"options": ["/sfx/gun/reload/machinepistol_reload_clip3.ogg"]
+							}
+						]
+					}
+				}, {
+					"time": 0.015,
+					"repeat": true,
+					"action": "particle",
+					"rotate": true,
+					"specification": {
+						"type": "animated",
+						"animation": "/animations/energybeamtrail/energybeamtrail.animation?replace;60B8EA=f2f2f2;008CD9=bfbfbf",
+						"initialVelocity": [0.0, 0.0],
+						"timeToLive": 0.2,
+						"layer": "middle",
+						"position": [0.0, 0.0]
+					}
+				}
+			],
+			"processing": "?0",
+			"bounces": 0,
+			"timeToLive": 1.0,
+			"power": 0.0,
+			"knockback": 0,
+			"speed": 120
+		},
+		"stances": {
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 15,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.25,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"frontArmFrame": "swim.2",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}

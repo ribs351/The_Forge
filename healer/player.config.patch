@@ -1,0 +1,10 @@
+[
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "healer_syringe" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "medic_pistol" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "medic_revolver" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "medic_smg" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "medic_ar" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "hp_grenade" }},
+	{"op" : "add" , "path" : "/defaultBlueprints/tier1/-" , "value" : { "item" : "ana_rifle" }}
+
+]

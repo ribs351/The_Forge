@@ -1,0 +1,18 @@
+{
+	"input": [{
+			"item": "bluestim",
+			"count": 50
+		}, {
+			"item": "durasteelassaultrifle",
+			"count": 1
+		}, {
+			"item": "redstim",
+			"count": 50
+		}
+	],
+	"output": {
+		"item": "medic_ar",
+		"count": 1
+	},
+	"groups": ["craftingmedical2", "buffs"]
+}

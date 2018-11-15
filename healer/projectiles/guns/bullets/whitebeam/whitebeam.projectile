@@ -1,0 +1,63 @@
+{
+	"projectileName": "whitebeam",
+	"image": "whitebeam.png",
+	"animationCycle": 0.2,
+	"lightColor": [255, 255, 255],
+	"frameNumber": 4,
+	"flippable": false,
+	"fullbright": true,
+	"physics": "bullet",
+	"bounces": 0,
+	"emitters": ["fireplasma"],
+	"actionOnReap": [{
+			"action": "spark"
+		}, {
+			"action": "sound",
+			"options": ["/sfx/statuseffects/stimuse.ogg"]
+		}, {
+			"action": "loop",
+			"count": 15,
+			"body": [{
+					"action": "particle",
+					"specification": {
+						"type": "ember",
+						"size": 1.0,
+						"color": [255, 255, 255, 0],
+						"light": [255, 255, 255],
+						"fullbright": true,
+						"fade": 0.9,
+						"initialVelocity": [0, 5],
+						"finalVelocity": [0.0, -50.0],
+						"approach": [0, 30],
+						"timeToLive": 0.7,
+						"layer": "middle",
+						"variance": {
+							"initialVelocity": [10, 10],
+							"timeToLive": 0.3
+						}
+					}
+				}
+			]
+		}
+	],
+	"periodicActions": [{
+			"time": 0.015,
+			"repeat": true,
+			"action": "particle",
+			"rotate": true,
+			"specification": {
+				"type": "animated",
+				"animation": "/animations/whitebeamtrail/whitebeamtrail.animation",
+				"initialVelocity": [0.0, 0.0],
+				"timeToLive": 0.2,
+				"layer": "middle",
+				"position": [0.0, 0.0]
+			}
+		}
+	],
+	"damagePoly": [[-8, 0], [2, 3], [8, 0], [2, -3]],
+	"damageKind": "hidden",
+	"knockback": 0,
+
+	"speed": 70
+}
