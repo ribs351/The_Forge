@@ -1,0 +1,8 @@
+{
+  "input" : [
+    { "item" : "feroziumstaff", "count" : 1 },
+    { "item" : "violiumbroadsword", "count" : 1 }
+  ],
+  "output" : { "item" : "vanguardblade", "count" : 1 },
+  "groups" : [ "craftingmanipulator", "weapons", "all" ]
+}

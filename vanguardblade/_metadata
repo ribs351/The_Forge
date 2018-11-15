@@ -1,0 +1,10 @@
+{
+  "author" : "Ribs",
+  "description" : "(Placeholder Thumbnail)\n\nI spent way too much time with this. Now you might think this is just a regular sword with fancy combos as always, and you'd be correct, but this sword also have a very interesting alt fire.\n\nThis mod adds a new weapon: Vanguard's Pride, featuring\n[list]\n[*] An energyblade with a 13-hit combo.\n[*] Capable of performing plasmablade barrages.\n[*] Something I should mention but I forgot :/\n[/list]\n\nCraftable with a manipulator anvil by combining a ferozium staff and a violium broadsword.\n\nThis is in no shape or form, a finished mod, therefore, future plans:\n[list]\n[*] Fix bugs if there are any\n[*] [strike]Balance the sword[/strike]\n[*] Compatibility patches for Chaika's RPG mod\n[*] Something I should mention but I forgot :/\n[/list]\n\nWhat's this \"Forge\" thing?\n\nIt's a mini-series of weapons and stuff that I plan on working. We do have a [url=https://discord.gg/2M5Xgf]discord server[/url] for those whom are interested.\n\nCredits:\nMe - Coding, compiling\nSteven Steel - Main sprite artist\nNicknameNeeded - Additional sprite help\nChuckfish - Creating Starbound and most of the assets that I'm using",
+  "friendlyName" : "The Forge: Vanguard's Pride",
+  "link" : "steam://url/CommunityFilePage/1529649528",
+  "name" : "vanguardblade",
+  "steamContentId" : "1529649528",
+  "tags" : "Weapons",
+  "version" : "1.0"
+}

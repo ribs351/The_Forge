@@ -1,0 +1,1231 @@
+{
+	"itemName": "vanguardblade",
+	"price": 960,
+	"level": 4,
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "To protect and serve.",
+	"shortdescription": "Vanguard's Pride",
+	"tooltipKind": "base",
+	"category": "broadsword",
+	"twoHanded": true,
+	"itemTags": ["weapon", "melee", "broadsword"],
+
+	"inventoryIcon": "vanguardbladeicon.png",
+
+	"animation": "/items/active/weapons/melee/broadsword/energybroadsword.animation",
+	"animationParts": {
+		"handle": "vanguardhandle.png",
+		"handleFullbright": "vanguardhandlefullbright.png",
+		"blade": "vanguardblade.png",
+		"staff": "",
+		"stone": "",
+		"chargeEffect": "vanguardglow.png"
+	},
+	"animationCustom": {
+		"sounds": {
+			"fire": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire2": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire3": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire4": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire5": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire6": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire7": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire8": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire9": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire10": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire11": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire12": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"fire13": ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+			"physicalcharge": ["/sfx/npc/boss/tentacleboss_beam_charge.ogg"],
+			"physicalfullcharge": ["/sfx/melee/sword_parry.ogg"],
+			"physicalchargedloop": ["/sfx/melee/charge_full_hold2.ogg"],
+			"physicaldischarge": ["/sfx/melee/laser_flip_slash.ogg"],
+			"physicalactivate": ["/sfx/npc/boss/cultistboss_recharge.ogg"]
+		},
+		"animatedParts": {
+			"stateTypes": {
+				"swoosh": {
+					"default": "idle",
+					"states": {
+						"idle": {},
+						"fire": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire2": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire3": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire4": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire5": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire6": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle",
+							"frameProperties": {
+								"immediateSound": ["/sfx/gun/elemental_lance.ogg"]
+							}
+						},
+						"fire7": {
+							"frames": 2,
+							"cycle": 0.2,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire8": {
+							"frames": 3,
+							"cycle": 0.1,
+							"mode": "transition",
+							"transition": "idle"
+						},
+						"fire9": {
+							"frames": 6,
+							"cycle": 0.3,
+							"mode": "transition",
+							"transition": "idle",
+							"frameProperties": {
+								"immediateSound": ["/sfx/gun/plasma_pistol1.ogg"]
+							}
+						},
+						"fire10": {
+							"frames": 3,
+							"cycle": 0.2,
+							"mode": "transition",
+							"transition": "idle",
+							"frameProperties": {
+								"immediateSound": ["/sfx/gun/plasma_pistol3.ogg"]
+							}
+						},
+						"fire11": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11a",
+							"frameProperties": {
+								"immediateSound": ["/sfx/projectiles/plasma1.ogg"]
+							}
+						},
+						"fire12": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11a",
+							"frameProperties": {
+								"immediateSound": ["/sfx/projectiles/plasma1.ogg"]
+							}
+						},
+						"fire13": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11a",
+							"frameProperties": {
+								"immediateSound": ["/sfx/projectiles/plasma1.ogg"]
+							}
+						},
+						"fire11a": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11b"
+						},
+						"fire11b": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11c"
+						},
+						"fire11c": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11d"
+						},
+						"fire11d": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11e"
+						},
+						"fire11e": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11f"
+						},
+						"fire11f": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11g"
+						},
+						"fire11g": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11h"
+						},
+						"fire11h": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "fire11i"
+						},
+						"fire11i": {
+							"frames": 3,
+							"cycle": 0.01,
+							"mode": "transition",
+							"transition": "idle"
+						}
+					}
+				},
+				"charge": {
+					"states": {
+						"idle": {},
+						"charge": {
+							"frames": 13,
+							"cycle": 1.3,
+							"mode": "transition",
+							"transition": "spark"
+						},
+						"spark": {
+							"frames": 3,
+							"cycle": 0.3,
+							"mode": "transition",
+							"transition": "charged"
+						},
+						"charged": {
+							"frames": 4,
+							"cycle": 0.5,
+							"mode": "loop"
+						},
+						"discharge": {
+							"frames": 3,
+							"cycle": 0.3,
+							"mode": "transition",
+							"transition": "idle"
+						}
+					}
+				},
+				"blade": {
+					"default": "inactive",
+					"states": {
+						"inactive": {
+							"properties": {
+								"lightsOff": ["glow"],
+								"particleEmittersOff": ["blade"]
+							}
+						},
+						"extend": {
+							"frames": 5,
+							"cycle": 0.15,
+							"mode": "transition",
+							"transition": "active",
+							"properties": {
+								"lightsOn": ["glow"],
+								"particleEmittersOn": ["blade"],
+								"immediateSound": "/sfx/tools/energypickaxe_start.ogg"
+							}
+						},
+						"active": {
+							"frames": 9,
+							"cycle": 0.5,
+							"mode": "loop",
+							"properties": {
+								"lightsOn": ["glow"],
+								"particleEmittersOn": ["blade"],
+								"persistentSound": "/sfx/tools/energypickaxe_idle.ogg"
+							}
+						},
+						"retract": {
+							"frames": 5,
+							"cycle": 0.15,
+							"mode": "transition",
+							"transition": "inactive",
+							"properties": {
+								"lightsOn": ["glow"],
+								"particleEmittersOn": ["blade"],
+								"immediateSound": "/sfx/tools/energypickaxe_stop2.ogg"
+							}
+						}
+					}
+				}
+			},
+			"parts": {
+				"blade": {
+					"properties": {
+						"zLevel": 0,
+						"centered": true,
+						"fullbright": true,
+						"offset": [0, 1.875],
+						"transformationGroups": ["weapon"],
+						"rotationCenter": [0, 0],
+						"damageArea": [[-0.7, -1.0], [-0.7, 2.5], [0.5, 2.5], [0.5, -1.0]]
+					},
+
+					"partStates": {
+						"blade": {
+							"inactive": {
+								"properties": {
+									"image": ""
+								}
+							},
+							"extend": {
+								"properties": {
+									"image": "<partImage>:extend.<frame>?<directives>?<bladeDirectives>"
+								}
+							},
+							"active": {
+								"properties": {
+									"image": "<partImage>:active.<frame>?<directives>?<bladeDirectives>"
+								}
+							},
+							"retract": {
+								"properties": {
+									"image": "<partImage>:retract.<frame>?<directives>?<bladeDirectives>"
+								}
+							}
+						}
+					}
+				},
+				"handle": {
+					"properties": {
+						"zLevel": 1,
+						"centered": true,
+						"image": "<partImage><paletteSwaps>?<directives>",
+						"offset": [0, 1.875],
+						"transformationGroups": ["weapon"],
+						"rotationCenter": [0, 0]
+					}
+				},
+				"chargeEffect": {
+					"properties": {
+						"zLevel": 3,
+						"fullbright": true,
+						"centered": true,
+						"offset": [-0.05, 1.7],
+						"transformationGroups": ["weapon"]
+					},
+
+					"partStates": {
+						"charge": {
+							"charge": {
+								"properties": {
+									"image": "<partImage>:charging.<frame>"
+								}
+							},
+							"spark": {
+								"properties": {
+									"image": "<partImage>:spark.<frame>"
+								}
+							},
+							"charged": {
+								"properties": {
+									"image": "<partImage>:loop.<frame>"
+								}
+							},
+							"discharge": {
+								"properties": {
+									"image": "<partImage>:discharge.<frame>"
+								}
+							}
+						}
+					}
+				},
+				"stone": {
+					"properties": {
+						"zLevel": 2,
+						"image":"/assetMissing.png",
+						"centered": true,
+						"fullbright": true,
+						"offset": [0, 0],
+						"focalPoint": [-3, -3],
+						"transformationGroups": ["weapon"]
+					}
+				},
+				"handleFullbright": {
+					"properties": {
+						"zLevel": 2,
+						"centered": true,
+						"fullbright": true,
+						"image": "<partImage><paletteSwaps>?<directives>",
+						"offset": [0, 1.875],
+						"transformationGroups": ["weapon"],
+						"rotationCenter": [0, 0]
+					}
+				},
+				"swoosh": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"fullbright": true,
+						"transformationGroups": ["swoosh"],
+						"rotationCenter": [0, 0]
+					},
+
+					"partStates": {
+						"swoosh": {
+							"idle": {
+								"properties": {
+									"image": ""
+								}
+							},
+							"fire": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh3/protectorswoosh.png:<frame>",
+									"offset": [3.5, 0],
+									"damageArea": [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+								}
+							},
+							"fire2": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh/protectorswoosh.png:<frame>?flipy",
+									"offset": [1, -2.5],
+									"damageArea": [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+								}
+							},
+							"fire3": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh/protectorswoosh.png:<frame>",
+									"offset": [1, 2.5],
+									"damageArea": [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+								}
+							},
+							"fire4": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh3/protectorswoosh.png:<frame>",
+									"offset": [3.5, 0],
+									"damageArea": [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+								}
+							},
+							"fire5": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh3/protectorswoosh.png:<frame>",
+									"offset": [3.5, 0],
+									"damageArea": [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+								}
+							},
+							"fire6": {
+								"properties": {
+									"image": "/items/active/weapons/ranged/abilities/lance/icelance.png:<frame>",
+									"offset": [7, 0],
+									"damageArea": [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+								}
+							},
+							"fire7": {
+								"properties": {
+									"image": "/items/active/weapons/melee/abilities/broadsword/spinslash/spinswoosh.png:<frame>?scalenearest=1.5",
+									"offset": [-1.5, 1],
+									"damageArea": [[-4, 1], [2.5, 1], [2.5, -2], [-4, -2]]
+								}
+							},
+							"fire8": {
+								"properties": {
+									"image": "/items/active/weapons/melee/broadsword/swoosh/protectorswoosh.png:<frame>?flipy",
+									"offset": [1, -2.5],
+									"damageArea": [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+								}
+							},
+							"fire9": {
+								"properties": {
+									"image": "/projectiles/boss/guardianboss/guardianlargeexplosion/iceguardianlargeexplosion.png:<frame>",
+									"offset": [7, 0],
+									"damageArea": [[2, 2], [2, -2], [-2, 2], [-2, -2]],
+									"zLevel": 10,
+									"rotationCenter": [0, 0],
+									"transformationGroups": ["swoosh"]
+								}
+							},
+							"fire10": {
+								"properties": {
+									"image": "/projectiles/npcs/penguinufocharge/penguinufocharge.png:<frame>?flipx?scalenearest=1.5",
+									"offset": [-1.6, 2],
+									"damageArea": [[2.5, 2.5], [2.5, -2.5], [-2.5, 2.5], [-2.5, -2.5]],
+									"zLevel": 10,
+									"transformationGroups": ["weapon"]
+								}
+							},
+							"fire11": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [0, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire12": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [0, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire13": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [0, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11a": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [3, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11b": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [6, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11c": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [9, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11d": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [12, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11e": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [15, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11f": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [18, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11g": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [21, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11h": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [24, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							},
+							"fire11i": {
+								"properties": {
+									"image": "/projectile/activeitems/lightplasmablade/lightplasmablade.png",
+									"offset": [27, 0],
+									"damageArea": [[2, 1], [-2, 1], [2, -1], [-2, -1]]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+
+		"transformationGroups": {
+			"weapon": {},
+			"swoosh": {}
+		},
+
+		"particleEmitters": {
+			"physicalswoosh": {
+				"active": false,
+				"transformationGroups": ["swoosh"],
+				"burstCount": 4,
+				"particles": [{
+						"particle": "protectorblade"
+					}, {
+						"particle": "protectorblade2"
+					}
+				]
+			},
+			"blade": {
+				"active": false,
+				"transformationGroups": ["weapon"],
+				"offsetRegion": [-0.5, 1.5, 0.5, 4.0],
+				"emissionRate": 5,
+				"particles": [{
+						"particle": "protectorblade"
+					}, {
+						"particle": "protectorblade2"
+					}
+				]
+			},
+			"physicalcharge": {
+				"active": false,
+				"transformationGroups": ["weapon"],
+				"emissionRate": 80,
+				"offsetRegion": [-0.5, 1.5, 0.5, 4.0],
+				"particles": [{
+						"particle": {
+							"type": "ember",
+							"size": 1.5,
+							"fullbright": true,
+							"color": [150, 220, 220, 230],
+							"fade": 0.9,
+							"destructionAction": "shrink",
+							"destructionTime": 0.8,
+							"position": [0, 0],
+							"initialVelocity": [0, 1],
+							"finalVelocity": [0, 3],
+							"approach": [0, 10],
+							"timeToLive": 0.3,
+							"variance": {
+								"size": 0.5,
+								"initialVelocity": [0.25, 0.25],
+								"finalVelocity": [0.25, 0.5]
+							}
+						}
+					}
+				]
+			}
+		},
+
+		"lights": {
+			"glow": {
+				"position": [0, 2.0],
+				"color": [0, 90, 140],
+				"transformationGroups": ["weapon"]
+			}
+
+		}
+	},
+
+	"scripts": ["/items/active/weapons/melee/energymeleeweapon.lua"],
+
+	"activeTime": 3.0,
+
+	"elementalType": "physical",
+
+	"primaryAbilityType": "broadswordcombo",
+	"primaryAbility": {
+		"name": "Combo Slash",
+		"type": "broadswordcombo",
+		"scripts": ["/items/active/weapons/melee/meleecombo.lua"],
+		"class": "MeleeCombo",
+
+		"comboSteps": 13,
+
+		"flashTime": 0.15,
+		"flashDirectives": "fade=FFFFFFFF=0.15",
+
+		"swooshOffsetRegions": [
+			[1.5, -1.0, 5.5, 1.0], [3.0, 0.5, 6.5, -2.0], [-3, -1, 6, 8], [1.5, -1.0, 5.5, 1.0], [0.75, 0.0, 4.25, 5.0], [1.5, -1.0, 5.5, 1.0], [1.5, -1.0, 5.5, 1.0], [-6, -8, -1, -3], [8, 10, 3, 5], [1.5, -1.0, 5.5, 1.0]
+		],
+
+		// cooldown time multiplier for steps after the first, compounded per combo step
+		"comboSpeedFactor": 0.9,
+
+		"edgeTriggerGrace": 0.25,
+		"energyUsage": 5,
+		"fireTime": 0.83,
+		"baseDps": 11.5,
+
+		"damageConfig": {
+			"damageSourceKind": "broadsword",
+			"statusEffects": [],
+			"knockbackMode": "facing",
+			"timeout": 0.5
+		},
+		"stepDamageConfig": [{
+				"baseDamageFactor": 0.7,
+				"knockback": 10,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 1.2,
+				"knockback": 15,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.8,
+				"knockback": 10,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.8,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 1.2,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.9,
+				"knockback": 10,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.7,
+				"knockback": 10,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 1.5,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.7,
+				"knockback": 10,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 1.2,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.6,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.6,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}, {
+				"baseDamageFactor": 0.6,
+				"knockback": 20,
+				"statusEffects": [{
+						"effect": "electrified",
+						"duration": 2
+					}, {
+						"effect": "ghostlyglow",
+						"duration": 2
+					}
+				]
+			}
+
+		],
+
+		"stances": {
+			"idle": {
+				"armRotation": -90,
+				"weaponRotation": -10,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"windup1": {
+				"duration": 0.15,
+				"armRotation": -150,
+				"weaponRotation": 55,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"preslash1": {
+				"duration": 0.0
+			},
+			"fire1": {
+				"duration": 0.2,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait1": {
+				"duration": 0.2,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true,
+				"twoHanded": true
+			},
+			"windup2": {
+				"duration": 0.15,
+				"armRotation": -100,
+				"weaponRotation": -160,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"preslash2": {
+				"duration": 0.025,
+				"armRotation": -70,
+				"weaponRotation": -175,
+				"twoHanded": true,
+
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"fire2": {
+				"duration": 0.2,
+				"armRotation": 80,
+				"weaponRotation": -140,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait2": {
+				"duration": 0.2,
+				"armRotation": 90,
+				"weaponRotation": 30,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true,
+				"twoHanded": true
+			},
+			"windup3": {
+				"duration": 0.15,
+				"armRotation": 100,
+				"weaponRotation": 10,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire3": {
+				"duration": 0.3,
+				"armRotation": -40,
+				"weaponRotation": -70,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait3": {
+				"duration": 0.2,
+				"armRotation": -50,
+				"weaponRotation": -60,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true,
+				"twoHanded": true
+			},
+			"windup4": {
+				"duration": 0.15,
+				"armRotation": -150,
+				"weaponRotation": 55,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"fire4": {
+				"duration": 0.1,
+				"armRotation": 0,
+				"weaponRotation": -100,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"wait4": {
+				"duration": 0.2,
+				"armRotation": 0,
+				"weaponRotation": -100,
+				"allowRotate": false,
+				"allowFlip": true,
+				"twoHanded": true
+			},
+			"windup5": {
+				"duration": 0.15,
+				"armRotation": -150,
+				"weaponRotation": 55,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"fire5": {
+				"duration": 0.1,
+				"armRotation": 0,
+				"weaponRotation": -80,
+				"twoHanded": false,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"wait5": {
+				"duration": 0.3,
+				"armRotation": 0,
+				"weaponRotation": -80,
+				"twoHanded": false,
+				"allowFlip": false,
+				"allowRotate": false
+			},
+			"windup6": {
+				"duration": 0.15,
+				"armRotation": -150,
+				"weaponRotation": 55,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"fire6": {
+				"duration": 0.1,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": false,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"wait6": {
+				"duration": 0.2,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": false,
+				"allowFlip": true,
+				"allowRotate": false
+			},
+			"windup7": {
+				"duration": 0.2,
+				"armRotation": 10,
+				"weaponRotation": -80,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"preslash7": {
+				"duration": 0.05,
+				"armRotation": -15,
+				"weaponRotation": -105,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"fire7": {
+				"duration": 0.2,
+				"armRotation": -105,
+				"weaponRotation": -150,
+				"weaponOffset": [0, 0],
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"wait7": {
+				"duration": 0.2,
+				"armRotation": -105,
+				"weaponRotation": -150,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true,
+				"twoHanded": true
+			},
+			"windup8": {
+				"duration": 0.5,
+				"armRotation": -100,
+				"weaponRotation": -160,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire8": {
+				"duration": 0.2,
+				"armRotation": 80,
+				"weaponRotation": -160,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait8": {
+				"duration": 0.2,
+				"armRotation": 80,
+				"weaponRotation": -160,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"windup9": {
+				"duration": 0.3,
+				"armRotation": 10,
+				"weaponRotation": -90,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire9": {
+				"duration": 0.3,
+				"armRotation": -160,
+				"weaponRotation": 80,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait9": {
+				"duration": 3,
+				"armRotation": -40,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"windup10": {
+				"duration": 0.2,
+				"armRotation": -100,
+				"weaponRotation": -160,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire10": {
+				"duration": 0.5,
+				"armRotation": 70,
+				"weaponRotation": 130,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"wait10": {
+				"duration": 0.2,
+				"armRotation": 70,
+				"weaponRotation": 130,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"windup11": {
+				"duration": 0.2,
+				"armRotation": 90,
+				"weaponRotation": 10,
+				"twoHanded": false,
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire11": {
+				"duration": 0.3,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": false,
+				"allowRotate": true,
+				"allowFlip": true
+			},
+			"wait11": {
+				"duration": 0.4,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"windup12": {
+				"duration": 0.1,
+				"armRotation": 90,
+				"weaponRotation": 10,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"fire12": {
+				"duration": 0.3,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": false,
+				"allowRotate": true,
+				"allowFlip": true
+			},
+			"wait12": {
+				"duration": 0.4,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"windup13": {
+				"duration": 0.1,
+				"armRotation": 90,
+				"weaponRotation": 10,
+				"twoHanded": true,
+				"allowRotate": false,
+				"allowFlip": true,
+				"aimAngle": 0
+			},
+			"fire13": {
+				"duration": 0.3,
+				"armRotation": 0,
+				"weaponRotation": -90,
+				"twoHanded": false,
+				"allowRotate": true,
+				"allowFlip": true
+			}
+		}
+	},
+	"stances": {
+		"idle": {
+			"armRotation": -90,
+			"weaponRotation": -10,
+			"allowRotate": false,
+			"allowFlip": true,
+			"aimAngle": 0
+		},
+		"charge": {
+			"duration": 1,
+			"armRotation": -20,
+			"weaponRotation": -10,
+			"weaponOffset": [0, 0.5],
+			"twoHanded": true,
+			"allowRotate": false,
+			"allowFlip": true
+		},
+		"charged": {
+			"armRotation": -20,
+			"weaponRotation": -10,
+			"weaponOffset": [0, 0.5],
+			"twoHanded": true,
+			"allowRotate": false,
+			"allowFlip": true
+		},
+		"discharge": {
+			"duration": 0.25,
+			"armRotation": 0,
+			"weaponRotation": -90,
+			"weaponOffset": [0, 0.5],
+			"twoHanded": false,
+			"allowRotate": true,
+			"allowFlip": true
+		},
+		"cooldown": {
+			"duration": 0.5,
+			"armRotation": -10,
+			"weaponRotation": -90,
+			"weaponAngularVelocity": -2100,
+			"twoHanded": false,
+			"allowRotate": false,
+			"allowFlip": true
+		}
+	},
+
+	"altAbilityType": "plasmabladebarrage",
+	"altAbility": {
+		"type": "plasmabladebarrage",
+		"name": "Blade Barrage",
+		"scripts": ["/items/active/weapons/staff/abilities/controlprojectile/plasmabarrage.lua"],
+		"class": "ControlProjectile",
+
+		"energyCost": 100,
+
+		"maxCastRange": 25,
+
+		"projectileCount": 15,
+		"projectileDistance": 4,
+		"projectileType": "lightplasmablade",
+		"projectileParameters": {
+			"baseDamage": 40
+		},
+		"triggerSound": ["/sfx/projectiles/plasma1.ogg"],
+
+		"projectileDelayFirst": 1.0,
+		"projectileDelayEach": 0.1
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}
