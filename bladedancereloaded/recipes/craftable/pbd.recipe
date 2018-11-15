@@ -1,0 +1,72 @@
+{
+	"input": [{
+			"count": 10,
+			"name": "money"
+		}
+	],
+	"output": {
+		"count": 1,
+		"name": "railcraftingtable",
+		"parameters": {
+			"price": 0,
+			"rarity": "common",
+			"itemName": "railcraftingtable",
+			"description": "The automated Bladesmith works to ensure your weapons are up to serviceable standards.",
+			"tooltipKind": "object",
+			"shortdescription": "^orange;Bladesmith's Forge^white;",
+			"orientations": [{
+					"imageLayers": [{
+							"image": "/objects/crafting/mechanicalanvil/mechanicalanvil.png:<color>.<frame>",
+							"fullbright": true
+						}, {
+							"image": "/objects/crafting/mechanicalanvil/mechanicalanvil.png:<color>.<frame>"
+						}
+					],
+					"imagePosition": [-16, 0],
+
+					"direction": "left",
+					"flipImages": true,
+
+					"frames": 23,
+					"animationCycle": 1.8,
+
+					"spaceScan": 0.1,
+					"anchors": ["bottom"]
+				},
+				{
+					"imageLayers": [{
+							"image": "/objects/crafting/mechanicalanvil/mechanicalanvil.png:<color>.<frame>",
+							"fullbright": true
+						}, {
+							"image": "/objects/crafting/mechanicalanvil/mechanicalanvil.png:<color>.<frame>"
+						}
+					],
+					"imagePosition": [-16, 0],
+
+					"direction": "right",
+
+					"frames": 23,
+					"animationCycle": 1.8,
+
+					"spaceScan": 0.1,
+					"anchors": ["bottom"]
+				}
+			],
+			"interactAction": "OpenCraftingInterface",
+			"interactData": {
+				"config": "/interface/windowconfig/crafting.config",
+				"paneLayoutOverride": {
+					"windowtitle": {
+						"title": "Project Blade Dance",
+						"subtitle": "Upgrade your bladed weapons with combos!",
+						"icon": {
+							"file": "/interface/crafting/frontierfurnace.png"
+						}
+					}
+				},
+				"filter": ["pbd"]
+			}
+		}
+	},
+	"groups": ["plain", "all"]
+}
