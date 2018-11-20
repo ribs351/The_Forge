@@ -9,7 +9,7 @@
 	"category": "Modified SMG",
 	"twoHanded": true,
 	"itemTags": ["weapon", "ranged", "machinepistol"],
-	"level": 3,
+	"level": 5,
 
 	"inventoryIcon": "medic_smg.png",
 
@@ -136,9 +136,9 @@
 
 	"altAbilityType": "stickyshot",
 	"altAbility": {
-		"fireTime": 1.5,
+		"fireTime": 1.0,
 		"baseDps": 0,
-		"energyUsage": 75,
+		"energyUsage": 50,
 		"projectileType": "energybeam",
 		"inaccuracy": 0.0,
 		"projectileCount": 1,

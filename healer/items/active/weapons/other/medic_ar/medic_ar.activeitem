@@ -9,7 +9,7 @@
 	"category": "assaultRifle",
 	"twoHanded": true,
 	"itemTags": ["weapon", "ranged", "assaultrifle"],
-	"level": 4,
+	"level": 6,
 
 	"inventoryIcon": "medic_ar.png",
 
@@ -88,8 +88,8 @@
 		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
 		"class": "GunFire",
 
-		"fireTime": 0.15,
-		"baseDps": 10.5,
+		"fireTime": 0.13,
+		"baseDps": 11.5,
 		"energyUsage": 31.5,
 		"inaccuracy": 0.02,
 
