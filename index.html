@@ -52,10 +52,16 @@
       display: none; 
     }
   }
+  .dropdown-menu {
+	background-color: #222222;
+  }
+  .dropdown-menu li a{
+	color: white;
+  }
   </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid" style="padding-top: 0px; padding-bottom: 0px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -68,13 +74,29 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+		<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="white" href="projects.html">Overview</a></li>
+          <li><a href="#">Project Blade Dance: Reloaded</a></li>
+          <li><a href="#">Healer's Toolkit</a></li>
+		  <li><a href="#">Vanguard's Pride</a></li>
+		  <li><a href="#">Protector's Broadsword+</a></li>
+        </ul>
+      </li>
         <li><a href="about.html">About us</a></li>
         <li><a href="https://steamcommunity.com/workshop/filedetails/?id=1534352541" target="_blank">Workshop Collection</a></li>
       </ul>
     </div>
   </div>
 </nav>
+<div class="container-fluid bg-1 text-center">
+<h3>The Forge?</h3>
+	<img src="https://cdn.discordapp.com/attachments/389488421204393984/504180419705700363/forgeyouribs.png"  class="img-circle" alt="Forge Icon">
+	<h3> The bellows blast once again! The forge stands ready to make weapons of war. </h3>
+</div>
+
  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -122,11 +144,6 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-</div>
-<div class="container-fluid bg-1 text-center">
-<h3>The Forge?</h3>
-	<img src="https://cdn.discordapp.com/attachments/389488421204393984/504180419705700363/forgeyouribs.png"  class="img-circle" alt="Forge Icon">
-	<h3> The bellows blast once again! The forge stands ready to make weapons of war. </h3>
 </div>
 
 <div class="container-fluid bg-2 text-center">

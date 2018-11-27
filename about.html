@@ -41,9 +41,15 @@
 		background-color: rgba(153, 153, 153, 0.3);
 		text-align:right;
 	}
+	 .dropdown-menu {
+	background-color: #222222;
+  }
+  .dropdown-menu li a{
+	color: white;
+  }
   </style>
   </head>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid" style="padding-top: 0px; padding-bottom: 0px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -55,9 +61,19 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li class="active"><a href="about.html">About us</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
+		<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="white" href="projects.html">Overview</a></li>
+          <li><a href="#">Project Blade Dance: Reloaded</a></li>
+          <li><a href="#">Healer's Toolkit</a></li>
+		  <li><a href="#">Vanguard's Pride</a></li>
+		  <li><a href="#">Protector's Broadsword+</a></li>
+        </ul>
+      </li>
+        <li><a href="about.html">About us</a></li>
         <li><a href="https://steamcommunity.com/workshop/filedetails/?id=1534352541" target="_blank">Workshop Collection</a></li>
       </ul>
     </div>
