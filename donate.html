@@ -46,6 +46,49 @@
   .dropdown-menu li a{
 	color: white;
   }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff;
+      color: #f4511e;
+  }
+  .panel-body{
+	color: #000000;
+  }  
+  .panel-heading {
+      color: #fff;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+	  
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+	  color: #f4511e;
+  }
+  .panel-footer h4 {
+      color: #f4511e;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
 	</style>
 </head>
 <body>
@@ -57,7 +100,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html">The Forge</a>
+      <a class="navbar-brand" href="index.html"><img src="https://cdn.discordapp.com/attachments/389488421204393984/504180419705700363/forgeyouribs.png"  class="img-rounded" alt="Forge Icon" width="30", height="30" ></a>
+	  <p class="navbar-text">The Forge</p>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -80,9 +124,71 @@
     </div>
   </div>
 </nav>
-<div class="container-fluid text-center bg-1" style="margin-top: 50px;">
-  <h3>Wanna donate? Here's instructions on how you can donate to our group.</h3>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="donate" class="container-fluid bg-1" style="margin-top: 50px;">
+  <div class="text-center">
+    <h2>Donate</h2>
+    <h4>Choose a package that works for you</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Basic</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>You make The Forge possible!</strong></p>
+          <p>When we thank our donators, that's you.</p>
+          <p>You get access to the donators only channel and regular updates on what we're doing and what shenanigans we're doing next.</p>
+		  <p>An orange.</p>
+		  <p>Our <strong>endless</strong> gratitude.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$1</h3>
+          <h4>per month</h4>
+          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Pro</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>10 times as much help!</strong></p>
+          <p>You'll receive a personal letter of thanks from me and the staff, along with a cake.</p>
+          <p>You'll get your own personal custom weapon!</p>
+          <p>You'll also get the VIP role.</p>
+		  <p>An Egg.</p>
+		  <p>Our <strong>endless</strong> gratitude.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$10</h3>
+          <h4>per month</h4>
+          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Premium</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Legendary Adventurer!</strong></p>
+          <p>You'll get a book written all about you. 100% chance to become a best seller.</p>
+          <p>We will personally host a party at your address, you'll do the clean up of course.</p>
+          <p>Potato Salad.</p>
+          <p>Our <strong>endless</strong> gratitude.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$100</h3>
+          <h4>per month</h4>
+          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+        </div>
+      </div>      
+    </div>    
+  </div>
 </div>
 <div class="container-fluid bg-2 text-center" style="margin-top: 0px;">
   <h3>Thanks for donating.</h3>
@@ -90,9 +196,6 @@
   <p>It also helps to feed my kids, I have too many that I don't even bother to count.</p>
   <p>My parents too, they needs to be fed as well.</p>
   <p>Hell, my internet friends are in a pickle, your proceeds would help out greatly!</p>
-</div>
-<div class="container-fluid bg-2 text-center" style="margin-top: 0px;">
-	<p style="color: rgb(26, 188, 156);"><strike>We don't take donations lol</strike></p>
 </div>
 <footer class="footer">
       <div class="container">
