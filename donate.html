@@ -89,7 +89,33 @@
       background-color: #f4511e;
       color: #fff;
   }
-	</style>
+    .bs-example{
+    	margin: 20px;
+    }
+    .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function () {
+	/* Get iframe src attribute value i.e. YouTube video url
+	and store it in a variable */
+	var url = $("#instructions").attr('src');
+
+	/* Assign empty url value to the iframe src attribute when
+	modal hide, which stop the video playing */
+	$("#myModal").on('hide.bs.modal', function () {
+		$("#instructions").attr('src', '');
+	});
+
+	/* Assign the initially stored url back to the iframe src
+	attribute when modal is displayed again */
+	$("#myModal").on('show.bs.modal', function () {
+		$("#instructions").attr('src', url);
+	});
+});
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -145,7 +171,7 @@
         <div class="panel-footer">
           <h3>$1</h3>
           <h4>per month</h4>
-          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+          <a href="#myModal" class="btn btn-lg" data-toggle="modal">Donate</a>
         </div>
       </div>      
     </div>     
@@ -159,13 +185,14 @@
           <p>You'll receive a personal letter of thanks from me and the staff, along with a cake.</p>
           <p>You'll get your own personal custom weapon!</p>
           <p>You'll also get the VIP role.</p>
+		  <p>We'll reveal the last 10 digits of Pi.</p>
 		  <p>An Egg.</p>
 		  <p>Our <strong>endless</strong> gratitude.</p>
         </div>
         <div class="panel-footer">
           <h3>$10</h3>
           <h4>per month</h4>
-          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+          <a href="#myModal" class="btn btn-lg" data-toggle="modal">Donate</a>
         </div>
       </div>      
     </div>       
@@ -184,12 +211,25 @@
         <div class="panel-footer">
           <h3>$100</h3>
           <h4>per month</h4>
-          <a class="btn btn-lg" target="_blank" href="https://youtu.be/yO-ksR8tuKM">Donate</a>
+          <a href="#myModal" class="btn btn-lg" data-toggle="modal">Donate</a>
         </div>
       </div>      
     </div>    
   </div>
 </div>
+<div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">How to Donate</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="instructions" width="560" height="315" src="https://www.youtube.com/embed/yO-ksR8tuKM" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="container-fluid bg-2 text-center" style="margin-top: 0px;">
   <h3>Thanks for donating.</h3>
   <p>Any bit of help is greatly appreciated, we'll use your proceeds to make more awesome mods in the future.</p>
