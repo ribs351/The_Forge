@@ -1,0 +1,1203 @@
+ <!DOCTYPE html>
+<html lang= "en">
+<head>
+	<title>The Forge</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	body {
+      font: 15px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #2d3339;
+	  background: #1abc9c;
+	  background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/386540/d601a413ad427cbabf681fc5db096f150ac8b4e6.jpg");
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	p {font-size: 16px;}
+	.margin {margin-bottom: 45px;}
+	.navbar {
+		border: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+	.bg-1
+	{
+		background-color: rgba(179, 166, 127, 0.3);
+		color: #ffffff;
+	}
+	.bg-2
+	{
+		background-color: rgba(26, 188, 156, 0.3);
+		color: #ffffff;
+	}
+	footer{
+		background-color: rgba(153, 153, 153, 0.3);
+		text-align:right;
+	}
+	 .dropdown-menu {
+	background-color: #222222;
+  }
+  .dropdown-menu li a{
+	color: white;
+  }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid" style="padding-top: 0px; padding-bottom: 0px;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="https://cdn.discordapp.com/attachments/389488421204393984/504180419705700363/forgeyouribs.png"  class="img-rounded" alt="Forge Icon" width="30", height="30" ></a>
+	  <p class="navbar-text">The Forge</p>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Home</a></li>
+		<li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="projects.html">Overview</a></li>
+          <li><a href="pbd_index.html">Project Blade Dance: Reloaded</a></li>
+          <li class="active"><a href="toolkit_index.html">Healer's Toolkit</a></li>
+		  <li><a href="vanguard_index.html">Vanguard's Pride</a></li>
+		  <li><a href="protector_index.html">Protector's Broadsword+</a></li>
+        </ul>
+      </li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="https://steamcommunity.com/workshop/filedetails/?id=1534352541" target="_blank">Workshop Collection <i class="fa fa-steam-square"></i></a></li> 
+		<a href="donate.html"><button class="btn btn-warning navbar-btn">Donate <span class="glyphicon glyphicon-usd"></span></button></a>
+      </ul>
+    </div>
+	</div>
+	<div class="container-fluid bg-1">
+	
+		 <div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">\healer\items\throwables\hp_grenade.thrownitem</a>
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse in">
+					<div class="panel-body">
+							<pre class="pre-scrollable">
+								<code>
+//Healing Grenade
+{
+	"itemName": "hp_grenade",
+	"price": 50,
+	"rarity": "Uncommon",
+	"category": "throwableItem",
+	"inventoryIcon": "hp_grenade.png",
+	"image": "hp_grenade.png",
+	"shortdescription": "Healing Grenade",
+	"description": "To quote one of our scientists: 'Programmable nanites that will revifiy your allies, while euthanizing those with hostile intent.' We hope that helps.",
+
+	"ammoUsage": 1,
+
+	"edgeTrigger": true,
+	"windupTime": 0.0,
+	"cooldown": 0.4,
+
+	"projectileType": "healnade",
+	"projectileConfig": {
+		"speed": 25,
+		"power": 40,
+		"periodicActions": [{
+				"time": 0,
+				"repeat": false,
+				"action": "sound",
+				"options": ["/sfx/projectiles/throw_item.ogg"]
+			}, {
+				"action": "sound",
+				"options": ["/sfx/melee/rocketspear_loop_poison.ogg"],
+				"time": 2,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "healingnadeprojectile",
+				"time": 2,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 2,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 2.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 3,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 3.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 4,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 4.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 5.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 6,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 6.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 7,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 7.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 8,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 8.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 9,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 9.5,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "damagenadeprojectile",
+				"time": 10,
+				"repeat": false
+			}
+		]
+	}
+}		
+								</code>
+							</pre>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">\healer\items\active\weapons\other\ana_rifle\ana_rifle.activeitem</a>
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse">
+					<div class="panel-body">
+						<pre class="pre-scrollable">
+							<code>
+//Biotic Rifle
+{
+	"itemName": "ana_rifle",
+	"price": 1500,
+	"inventoryIcon": "ana_rifle.png",
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "Originally belonging to a cyclops, this rifle somehow someway made it into your possession.",
+	"shortdescription": "Biotic Rifle",
+	"level": 5,
+	"tooltipKind": "base",
+	"category": "sniperRifle",
+	"itemTags": ["weapon", "ranged", "rifle"],
+	"twoHanded": true,
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "ana_rifle.png",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"stateTypes": {
+				"firing": {
+					"default": "off",
+					"states": {
+						"off": {},
+						"fire": {
+							"frames": 2,
+							"cycle": 0.07,
+							"mode": "transition",
+							"transition": "off"
+						}
+					}
+				}
+			},
+
+			"parts": {
+				"muzzleFlash": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [2, -1],
+						"fullbright": true,
+						"transformationGroups": ["muzzle"]
+					},
+
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": "<partImage>:<variant>.<frame>"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"particleEmitters": {
+			"muzzleFlash": {
+				"offsetRegion": [5.5, -0.5, 5.5, -0.5],
+				"particles": [{
+						"particle": "discardedbullet"
+					}
+				]
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/gun/omnicannon_shot1.ogg", "/sfx/gun/omnicannon_shot2.ogg", "/sfx/gun/omnicannon_shot3.ogg", "/sfx/gun/omnicannon_shot4.ogg"],
+			"altFire": ["/sfx/gun/gristlegun1.ogg", "/sfx/gun/gristlegun2.ogg", "/sfx/gun/gristlegun3.ogg", "/sfx/gun/gristlegun4.ogg"]
+		}
+	},
+
+	"baseOffset": [0.9, 0.0],
+	"muzzleOffset": [1.875, 1.3],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 1.0,
+		"baseDps": 8,
+		"energyUsage": 24,
+		"inaccuracy": 0.008,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "explosivebullet",
+		"projectileParameters": {
+			"damageTeam": {
+				"type": "friendly"
+			},
+			"statusEffects": [{
+					"effect": "weakpoison",
+					"duration": 20
+				}
+			],
+			"actionOnReap": [{
+					"action": "projectile",
+					"type": "healingnadeprojectile",
+					"config": {
+						"timeToLive": 1
+					}
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"config": {
+						"timeToLive": 0.5
+					}
+				}, {
+					"action": "sound",
+					"options": ["/sfx/projectiles/ice_break1.ogg", "/sfx/projectiles/ice_break2.ogg", "/sfx/projectiles/ice_break3.ogg", "/sfx/projectiles/ice_break4.ogg", "/sfx/projectiles/ice_break5.ogg", "/sfx/projectiles/ice_break6.ogg", "/sfx/projectiles/ice_break7.ogg", "/sfx/projectiles/ice_break8.ogg", "/sfx/projectiles/ice_break9.ogg", "/sfx/projectiles/ice_break10.ogg"]
+				}
+			],
+			"periodicActions": [{
+					"time": 0,
+					"repeat": false,
+					"action": "projectile",
+					"type": "invisibletentaclefistnosound",
+					"config": {
+						"controlForce": 9999999999,
+						"speed": 1000,
+						"snapDistance": 1000,
+						"pickupDistance": 0,
+						"damageTeam": {
+							"type": "passive"
+						},
+						"ignoreTerrain": true,
+						"bounces": -1,
+						"power": 0,
+						"knockback": 0,
+						"damageKind": "hidden",
+						"timeToLive": 0.7,
+						"actionOnReap": [{
+								"action": "sound",
+								"options": ["/sfx/gun/reload/machinepistol_reload_clip3.ogg"]
+							}
+						]
+					}
+				}, {
+					"time": 0.015,
+					"repeat": true,
+					"action": "particle",
+					"rotate": true,
+					"specification": {
+						"type": "animated",
+						"animation": "/animations/energybeamtrail/energybeamtrail.animation?replace;60B8EA=f2f2f2;008CD9=bfbfbf",
+						"initialVelocity": [0.0, 0.0],
+						"timeToLive": 0.2,
+						"layer": "middle",
+						"position": [0.0, 0.0]
+					}
+				}
+			],
+			"processing": "?0",
+			"bounces": 0,
+			"damageKind": "poison",
+			"damageType": "ignoresdef",
+			"timeToLive": 1.0,
+			"power": 0.0,
+			"knockback": 0,
+			"speed": 120
+		},
+		"stances": {
+			"idle": {
+				"armRotation": 0,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": true,
+				"allowFlip": true
+			},
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 10,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.25,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"frontArmFrame": "swim.2",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+	"altAbilityType": "stickyshot",
+	"altAbility": {
+		"fireTime": 1.5,
+		"baseDps": 0,
+		"energyUsage": 375,
+		"projectileType": "whitebeam",
+		"inaccuracy": 0.0,
+		"projectileCount": 1,
+		"projectileParameters": {
+			"damageTeam": {
+				"type": "environment"
+			},
+			"statusEffects": [{
+					"effect": "regenerationfast",
+					"duration": 10
+				}, {
+					"effect": "energyregen",
+					"duration": 10
+				}, {
+					"effect": "nanowrapheal"
+				}, {
+					"effect": "maxhealthscalingboostfood",
+					"duration": 10
+				}, {
+					"effect": "maxenergyscalingboostfood",
+					"duration": 10
+				}
+			],
+			"actionOnReap": [{
+					"action": "spark"
+				}, {
+					"action": "sound",
+					"options": ["/sfx/statuseffects/stimuse.ogg"]
+				}, {
+					"action": "loop",
+					"count": 15,
+					"body": [{
+							"action": "particle",
+							"specification": {
+								"type": "ember",
+								"size": 1.0,
+								"color": [96, 184, 234, 255],
+								"light": [0, 140, 217],
+								"fullbright": true,
+								"fade": 0.9,
+								"initialVelocity": [0, 0],
+								"timeToLive": 0.3,
+								"layer": "middle",
+								"variance": {
+									"initialVelocity": [10, 10],
+									"timeToLive": 0.15
+								}
+							}
+						}
+					]
+				}
+			],
+			"periodicActions": [{
+					"time": 0,
+					"repeat": false,
+					"action": "projectile",
+					"type": "invisibletentaclefistnosound",
+					"config": {
+						"controlForce": 9999999999,
+						"speed": 1000,
+						"snapDistance": 1000,
+						"pickupDistance": 0,
+						"damageTeam": {
+							"type": "passive"
+						},
+						"ignoreTerrain": true,
+						"bounces": -1,
+						"power": 0,
+						"knockback": 0,
+						"damageKind": "hidden",
+						"timeToLive": 0.7,
+						"actionOnReap": [{
+								"action": "sound",
+								"options": ["/sfx/gun/reload/machinepistol_reload_clip3.ogg"]
+							}
+						]
+					}
+				}, {
+					"time": 0.015,
+					"repeat": true,
+					"action": "particle",
+					"rotate": true,
+					"specification": {
+						"type": "animated",
+						"animation": "/animations/energybeamtrail/energybeamtrail.animation?replace;60B8EA=f2f2f2;008CD9=bfbfbf",
+						"initialVelocity": [0.0, 0.0],
+						"timeToLive": 0.2,
+						"layer": "middle",
+						"position": [0.0, 0.0]
+					}
+				}
+			],
+			"processing": "?0",
+			"bounces": 0,
+			"timeToLive": 1.0,
+			"power": 0.0,
+			"knockback": 0,
+			"speed": 120
+		},
+		"stances": {
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 15,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"frontArmFrame": "run.1",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.25,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"frontArmFrame": "swim.2",
+				"backArmFrame": "rotation",
+				"weaponOffset": [0.4, 0.2],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}
+							</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">\healer\items\active\weapons\other\healer_syringe\healer_syringe.activeitem</a>
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse">
+					<div class="panel-body">
+						<pre class="pre-scrollable">
+							<code>
+//Medical Syringe
+{
+	"itemName": "healer_syringe",
+	"price": 960,
+	"maxStack": 1,
+	"rarity": "Common",
+	"description": "Repairs damaged tissues and body parts.",
+	"shortdescription": "Nanite Autoinjector",
+	"tooltipKind": "base",
+	"category": "Medical Syringe",
+	"twoHanded": true,
+	"itemTags": ["weapon", "ranged"],
+	"level": 1,
+
+	"inventoryIcon": "healer_syringe.png",
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "healer_syringe.png",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"parts": {
+				"middle": {
+					"properties": {
+						"image": "healer_syringe.png",
+						"offset": [0.4, 1.0],
+						"fullbright": false,
+						"centered": false
+					}
+				},
+				"butt": {
+					"properties": {
+						"image": "",
+						"offset": [-0.8, 1.3],
+						"fullbright": false,
+						"centered": false
+					}
+				},
+				"barrel": {
+					"properties": {
+						"firePosition": [-2, 1.375],
+						"image": "",
+						"offset": [0, 0],
+						"fullbright": false,
+						"centered": false
+					}
+				},
+				"muzzleFlash": {
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": ""
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"particleEmitters": {
+			"altMuzzleFlash": {
+				"active": false,
+				"transformationGroups": ["muzzle"],
+				"emissionRate": 8,
+				"offsetRegion": [0.0, 0.0, 0.0, 0.0],
+				"particles": []
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/statuseffects/stimuse.ogg"],
+			"altFire": ["/sfx/statuseffects/stimuse.ogg"]
+		}
+	},
+
+	"baseOffset": [0.6, 0.15],
+	"muzzleOffset": [-1, 0.0],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 1,
+		"baseDps": 0,
+		"energyUsage": 35,
+		"inaccuracy": 0.02,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "standardbullet",
+		"projectileParameters": {
+			"speed": 30,
+			"timeToLive": 0.1,
+			"periodicActions": [],
+			"processing": "?hueshift=?0",
+			"movementSettings": {
+				"collisionEnabled": false
+			},
+			"damageTeam": {
+				"type": "environment"
+			},
+			"damageKind": "hidden",
+			"statusEffects": [{
+					"effect": "regenerationfast",
+					"duration": 3
+				}, {
+					"effect": "staticshield",
+					"duration": 0.5
+				}
+			],
+			"bounces": 0,
+			"power": 0,
+			"knockback": 0,
+			"actionOnReap": [{
+					"action": "projectile",
+					"type": "blueglobeexplosion",
+					"timeToLive": 0,
+					"inheritDamageFactor": 0,
+					"config": {
+						"processing": "?0",
+						"damageKind": "noDamage",
+						"statusEffects": [{
+								"effect": "regenerationfast",
+								"duration": 3
+							}, {
+								"effect": "staticshield",
+								"duration": 0.5
+							}
+						]
+					}
+				}
+			]
+		},
+		"stances": {
+			"idle": {
+				"armRotation": -90,
+				"weaponRotation": 0,
+				"twoHanded": false,
+				"weaponOffset": [-1.5, -1.3],
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 3,
+				"weaponRotation": 90,
+				"twoHanded": false,
+				"weaponOffset": [-1.5, -1.3],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.5,
+				"armRotation": 3,
+				"weaponRotation": -1440,
+				"twoHanded": false,
+				"weaponOffset": [-1.5, -1.3],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+
+	"altAbilityType": "stickyshot",
+	"altAbility": {
+		"scripts": ["/items/active/weapons/ranged/abilities/altfire.lua"],
+		"class": "AltFireAttack",
+
+		"projectileType": "standardbullet",
+		"projectileParameters": {
+			"speed": -100,
+			"timeToLive": 10,
+			"periodicActions": [],
+			"processing": "?hueshift=?0",
+			"movementSettings": {
+				"collisionEnabled": false
+			},
+			"damageTeam": {
+				"type": "indiscriminate"
+			},
+			"damageKind": "hidden",
+			"statusEffects": [{
+					"effect": "regenerationfast",
+					"duration": 3
+				}, {
+					"effect": "staticshield",
+					"duration": 0.5
+				}
+			],
+			"bounces": 0,
+			"power": 0,
+			"knockback": 0,
+			"actionOnReap": [{
+					"action": "projectile",
+					"type": "blueglobeexplosion",
+					"timeToLive": 0,
+					"inheritDamageFactor": 0,
+					"config": {
+						"processing": "?0",
+						"damageKind": "noDamage",
+						"statusEffects": [{
+								"effect": "regenerationfast",
+								"duration": 3
+							}, {
+								"effect": "staticshield",
+								"duration": 0.5
+							}
+						]
+					}
+				}
+			]
+		},
+
+		// use baseDps and fireTime from primary fire
+
+		"baseDamageMultiplier": 0,
+		"energyUsage": 70,
+
+		"stances": {
+			"fire": {
+				"duration": 0.5,
+				"armRotation": 0,
+				"weaponRotation": -45,
+				"twoHanded": false,
+				"weaponOffset": [-1.5, -1.3],
+				"allowRotate": false,
+				"allowFlip": false
+			},
+			"cooldown": {
+				"duration": 0.5,
+				"armRotation": 5,
+				"weaponRotation": -1440,
+				"twoHanded": false,
+				"weaponOffset": [-1.5, -1.3],
+				"allowRotate": false,
+				"allowFlip": false
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}
+
+							</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">\healer\items\active\weapons\other\medic_ar\medic_ar.activeitem</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse">
+					<div class="panel-body">
+						<pre class="pre-scrollable">
+							<code>
+{
+	"itemName": "medic_ar",
+	"price": 960,
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "It's the only weapon where it's ok to lob grenades at your friends!",
+	"shortdescription": "Healer's Assault Rifle",
+	"tooltipKind": "base",
+	"category": "assaultRifle",
+	"twoHanded": true,
+	"itemTags": ["weapon", "ranged", "assaultrifle"],
+	"level": 6,
+
+	"inventoryIcon": "medic_ar.png",
+
+	"animation": "/items/active/weapons/ranged/gun.animation",
+	"animationParts": {
+		"butt": "",
+		"middle": "medic_ar.png?scalenearest=0.9",
+		"barrel": "",
+		"muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+	},
+	"animationCustom": {
+		"animatedParts": {
+			"parts": {
+				"muzzleFlash": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [0.9, -0.3],
+						"fullbright": true,
+						"transformationGroups": ["muzzle"]
+					},
+
+					"partStates": {
+						"firing": {
+							"fire": {
+								"properties": {
+									"image": "<partImage>:<variant>.<frame>"
+								}
+							}
+						}
+					}
+				},
+				"barrel": {
+					"properties": {
+						"centered": true,
+						"image": "<partImage><paletteSwaps>",
+						"offset": [-0.75, -0.375],
+						"firePosition": [0.75, -0.125],
+						"transformationGroups": ["weapon"]
+					}
+				},
+				"grenadelauncher": {
+					"properties": {
+						"zLevel": -1,
+						"centered": true,
+						"offset": [-0.75, -0.375],
+						"transformationGroups": ["muzzle"],
+						"firePosition": [0.75, -0.125],
+						"image": "/items/active/weapons/ranged/abilities/grenadelauncher/grenadelauncher.png?0"
+					}
+				}
+			}
+		},
+		"particleEmitters": {
+			"muzzleFlash": {
+				"offsetRegion": [5, 0, 5, 0],
+				"particles": [{
+						"particle": "discardedbullet"
+					}
+				]
+			}
+		},
+		"sounds": {
+			"fire": ["/sfx/gun/ar4.ogg"]
+		}
+	},
+
+	"baseOffset": [0.4, 0.2],
+	"muzzleOffset": [2.1, 0.5],
+
+	"scripts": ["/items/active/weapons/ranged/gun.lua"],
+
+	"elementalType": "physical",
+
+	"primaryAbility": {
+		"scripts": ["/items/active/weapons/ranged/gunfire.lua"],
+		"class": "GunFire",
+
+		"fireTime": 0.13,
+		"baseDps": 11.5,
+		"energyUsage": 31.5,
+		"inaccuracy": 0.02,
+
+		"projectileCount": 1,
+		"fireType": "auto",
+
+		"projectileType": "standardbullet",
+		"projectileParameters": {
+			"knockback": 15
+		},
+		"stances": {
+			"idle": {
+				"armRotation": 0,
+				"weaponRotation": 0,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": true,
+				"allowFlip": true,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			},
+			"fire": {
+				"duration": 0,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			},
+			"cooldown": {
+				"duration": 0.15,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			}
+		}
+	},
+
+	"altAbilityType": "grenadelauncher",
+	"altAbility": {
+		"name": "Grenade Launcher",
+		"type": "grenadelauncher",
+		"scripts": ["/items/active/weapons/ranged/abilities/altfire.lua"],
+		"class": "AltFireAttack",
+
+		"elementalConfig": {
+			"physical": {
+				"projectileType": "medic_penetrator"
+			}
+		},
+		"projectileParameters": {
+			"speed": 70,
+			"power": 40,
+			"periodicActions": [{
+					"action": "sound",
+					"options": ["/sfx/melee/rocketspear_loop_poison.ogg"],
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "healingnadeprojectile",
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 2,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 2.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 3,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 3.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 4,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 4.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 5.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 6,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 6.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 7,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 7.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 8,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 8.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 9,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 9.5,
+					"repeat": false
+				}, {
+					"action": "projectile",
+					"type": "damagenadeprojectile",
+					"time": 10,
+					"repeat": false
+				}
+			]
+
+		},
+		"projectileCount": 1,
+		"inaccuracy": 0,
+		"baseDamage": 30,
+		"energyUsage": 250,
+		"fireTime": 2.0,
+		"knockback": 10,
+		"fireType": "auto",
+
+		"firePositionPart": "grenadelauncher",
+		"hidePrimaryMuzzleFlash": true,
+
+		"stances": {
+			"fire": {
+				"duration": 0,
+				"armRotation": 5,
+				"weaponRotation": 5,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.2",
+				"backArmFrame": "swim.3"
+			},
+			"cooldown": {
+				"duration": 0.11,
+				"armRotation": 3,
+				"weaponRotation": 3,
+				"twoHanded": true,
+				"weaponOffset": [0.7, 0.1],
+				"allowRotate": false,
+				"allowFlip": false,
+
+				"frontArmFrame": "run.1",
+				"backArmFrame": "swim.3"
+			}
+		}
+	},
+
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}
+
+								</code>
+							</pre>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">\healer\items\active\weapons\other\medic_ar\medic_ar.activeitem</a>
+						</h4>
+					</div>
+					<div id="collapse5" class="panel-collapse collapse">
+						<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+					</div>
+				<div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">\healer\items\active\weapons\other\medic_ar\medic_ar.activeitem</a>
+						</h4>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+					</div>
+				</div>
+  <div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">\healer\items\active\weapons\other\medic_ar\medic_ar.activeitem</a>
+						</h4>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+					</div>
+				</div>
+	</div> 
+  <footer class="footer">
+	<div class="container">
+        <span class="text-muted">Copyright &copy; LOLOLOLOLOLOLOLOL</span>
+      </div>
+  </footer>
+  </html>
